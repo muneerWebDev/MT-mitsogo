@@ -9,8 +9,6 @@ $breakpoints: (xs: 576px,
     lg: 1200px,
     xl: 1400,
     xxl: 1650);
-
-
 //
 //  RESPOND ABOVE
 //––––––––––––––––––––––––––––––––––––––––––––––––––
@@ -109,41 +107,31 @@ $breakpoints: (xs: 576px,
     }
 }
 
-
-
 @mixin container() {
-    &>* {
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: $container_gutter;
-        padding-right: $container_gutter;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $gutters;
+    padding-right: $gutters;
 
-        @include media-breakpoint-up(md) {
-            max-width: $container-max-width;
-        }
+    @include media-breakpoint-up(md) {
+        max-width: $container-max-width;
     }
 }
 
-.d-block {
-    display: block;
+.container {
+    @include container();
 }
 
-.d-none {
-    display: none;
+@import 'plugins/bootstrap-grid';
+
+.d-flex{
+    display: flex !important;
 }
 
-.text-center {
-    text-align: center;
+.ml-auto{
+    margin-left: auto !important;
 }
 
-
-
-@include media-breakpoint-up(md) {
-    .d-md-none {
-        display: none;
-    }
-
-    .d-md-block {
-        display: block;
-    }
+.align-self-center{
+    align-self: center !important;
 }

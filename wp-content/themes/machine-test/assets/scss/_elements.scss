@@ -1,0 +1,17 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    font-family: $font-primary;
+}
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: $base-font-size ;
+    color: $base-color;
+}
+
+a{
+    color: $black;
+}

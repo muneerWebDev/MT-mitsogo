@@ -1,0 +1,29 @@
+<?php
+
+
+get_header(); ?>
+
+<?php
+if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+
+        <main>
+
+            <section id="post-<?php the_ID(); ?>">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2><?php the_title(); ?></h2>
+                            <div class="post-excerpt"><?php the_excerpt(); ?></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+<?php endwhile;
+endif;
+?>
+
+<?php get_footer(); ?>

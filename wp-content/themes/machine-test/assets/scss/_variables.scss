@@ -1,0 +1,17 @@
+//colors
+$black: #000;
+$white: #000;
+$base-color: #353535;
+$grey: #797979;
+$primary: #344ff4;
+//typography
+$font-primary: 'Nunito';
+$base-font-size : 1.6rem;
+
+//layouts
+:root{
+    --container-max-width :  126rem;
+    --gutters :  1.5rem;
+}
+$container-max-width: var(--container-max-width);
+$gutters: var(--gutters);
