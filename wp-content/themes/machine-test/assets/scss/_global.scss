@@ -1,3 +1,70 @@
+.hamburger {
+    width: 22px;
+    height: 2px;
+    background: $base-color;
+    display: block;
+    position: relative;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: -7px;
+        background: $base-color;
+        transition: .3s;
+    }
+
+    &::after {
+        top: initial;
+        bottom: -7px;
+        width: 16px;
+    }
+
+    &.change {
+        background: transparent;
+
+        &::before {
+            background: $base-color;
+            transform: rotate(-45deg) translate(-9px, 11px)
+        }
+
+        &::after {
+            background: $base-color;
+            transform: rotate(45deg) translate(-2px, -5px)
+        }
+    }
+}
 .siteHeader{
-    padding: 3rem 0;
+    padding: 3.5rem 0;
+
+    .social{
+        a{
+            display: inline-block;
+            margin: 0 1rem;
+        }
+    }
+
+    .search{
+        margin: 0 3rem;
+        font-size: 1.8rem;
+    }
+
+    button{
+        padding: 0;
+    }
+
+    .navbar{
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 30%;
+        transform: translateX(100%);
+    }
 }

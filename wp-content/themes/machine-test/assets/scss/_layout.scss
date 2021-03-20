@@ -114,24 +114,51 @@ $breakpoints: (xs: 576px,
     padding-right: $gutters;
 
     @include media-breakpoint-up(md) {
-        max-width: $container-max-width;
+        max-width: calc(#{$container-max-width} + calc(2*#{$gutters}));
     }
 }
 
 .container {
     @include container();
+
+    &-righted{
+        @include container();
+        max-width: auto;
+        margin-left: var(--containerOffset);
+    }
 }
+
 
 @import 'plugins/bootstrap-grid';
 
-.d-flex{
+.d-flex {
     display: flex !important;
 }
 
-.ml-auto{
+.ml-auto {
     margin-left: auto !important;
 }
 
-.align-self-center{
+.align-self-center {
     align-self: center !important;
+}
+
+.dark-sec {
+    position: relative;
+    z-index: 0;
+    padding: 21rem 0 11rem;
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: darken($grey, 35%);
+        opacity: .85;
+        z-index: -1;
+    }
+    * {
+        color: $white;
+    }
 }

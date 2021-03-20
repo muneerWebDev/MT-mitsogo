@@ -2,16 +2,86 @@
     box-sizing: border-box;
     margin: 0;
     font-family: $font-primary;
+    font-size: $base-font-size ;
+    &:focus{
+        outline: none;
+    }
 }
 html{
     font-size: 62.5%;
 }
 
 body{
-    font-size: $base-font-size ;
     color: $base-color;
+    font-weight: $base-font-weight;
+}
+
+h2{
+    font-size: $h2-size;
+}
+
+h3{
+    font-size: $h3-size;
+}
+
+h5{
+    font-size: $h5-size;
+}
+
+h6{
+    text-transform: uppercase;
+    color: $grey;
+    letter-spacing: .1rem;
+    &+h3,&+h2{
+        margin-top: 1rem;
+    }
+}
+
+p{
+    line-height: 3.2rem;
 }
 
 a{
     color: $black;
+    text-decoration: none;
+}
+
+.btn{
+    transition: .3s;
+}
+
+.btn-link{
+    display: inline-flex;
+    align-items: center;
+    color: $secondary;
+    font-size: $h5-size;
+    font-weight: $weight-bolder;
+
+    &::after{
+        content: '';
+        width: 2.3rem;
+        height: 2.3rem;
+        background: $secondary;
+        border-radius: 50%;
+        line-height: 2.3rem;
+        font-family: "Font Awesome 5 Pro";
+        text-align: center;
+        font-style: normal;
+        content: '\f054';
+        color: $white;
+        font-size: calc(#{$base-font-size}/2);
+        margin-left: 1.3rem;
+        box-shadow: $red-box-shadow;
+        transition: .3s;
+    }
+    &:hover{
+        &::after{
+            transform: translateX(5px);
+        }
+    }
+}
+
+button{
+    background: transparent;
+    border: none;
 }
