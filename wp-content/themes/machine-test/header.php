@@ -60,7 +60,7 @@
                         ?>
 
                         <button class="btn-trans search">
-                            <i class="far fa-search"></i>
+                            <img src="<?php echo get_template_directory_uri() ?>/assets/images/icons/search.png" alt="">
                         </button>
 
                         <button id="navTrigger">
