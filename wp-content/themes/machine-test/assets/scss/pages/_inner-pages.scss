@@ -8,6 +8,7 @@
         @include media-breakpoint-up(md) {
             display: flex;
             margin-bottom: -7rem;
+            align-items: flex-end;
         }
     }
 
@@ -16,7 +17,6 @@
         overflow: hidden;
         box-shadow: $image-box-shadow;
         display: flex;
-        align-items: flex-start;
 
         img {
             width: 100%;

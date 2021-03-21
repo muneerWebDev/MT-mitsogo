@@ -217,3 +217,39 @@ button {
 ::-webkit-scrollbar-thumb:hover {
     background: $base-color;
 }
+
+//text fade in effect
+
+.skewed {
+
+    &>* {
+        display: block;
+        opacity: 0;
+        transform-origin: center top;
+        transform-style: preserve-3d;
+        transform: skew(10deg, 1deg) rotateX(90deg);
+        transition: opacity 0s cubic-bezier(.215, .61, .355, 1), transform 0s cubic-bezier(.215, .61, .355, 1);
+        transition-delay: .1s;
+
+        &:nth-child(2) {
+            transition-delay: .3s;
+        }
+
+        &:nth-child(3) {
+            transition-delay: .7s;
+        }
+
+        &:nth-child(4) {
+            transition-delay: .10s;
+        }
+    }
+
+    &.is-inview {
+
+        &>* {
+            transform: none;
+            opacity: 1;
+            transition-duration: 1s;
+        }
+    }
+}

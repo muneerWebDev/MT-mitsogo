@@ -72,4 +72,27 @@ function customScroll() {
     jQuery(window).scroll(function () {
         manageClass();
     })
+
+    // adding class to div when in viewport 
+    function checkIfInView() {
+        jQuery(".skewed").each(function () {
+            if (isScrolledIntoView(jQuery(this))) {
+                jQuery(this).addClass("is-inview");
+            }
+        });
+    }
+    checkIfInView ();
+    jQuery(window).on('scroll', function () {
+        checkIfInView ();
+    });
+
+    function isScrolledIntoView(elem) {
+        var docViewTop = jQuery(window).scrollTop();
+        var docViewBottom = docViewTop + (jQuery(window).height()*1.15);
+
+        var elemTop = jQuery(elem).offset().top;
+        var elemBottom = elemTop + jQuery(elem).height();
+
+        return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+    }
 }

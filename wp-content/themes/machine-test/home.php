@@ -33,7 +33,7 @@ get_header(); ?>
                             </div>
                         </div>
                         <div class="col-md-6 text-col">
-                            <div class="text-wrapper">
+                            <div class="text-wrapper skewed">
                                 <h6><?php echo $sub_heading ?></h6>
                                 <h3><?php echo $main_heading ?></h3>
 
@@ -101,7 +101,7 @@ get_header(); ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="text-wrapper">
+                            <div class="text-wrapper skewed">
                                 <h6><?php echo $sub_heading ?></h6>
                                 <h2>
                                     <?php echo $main_heading ?>
@@ -143,7 +143,7 @@ get_header(); ?>
                                 $testimonials_text = get_sub_field('testimonials_intro_text');
                         ?>
                                 <div class="col-md-4">
-                                    <div class="text">
+                                    <div class="text skewed">
                                         <h5><?php echo $testimonials_heading ?></h5>
                                         <p>
                                             <?php echo $testimonials_text ?>
@@ -174,7 +174,7 @@ get_header(); ?>
 
                                         <div class="item">
                                             <div class="wrap">
-                                                <div class="content">
+                                                <div class="content ">
                                                     <p>"<?php echo $testimonials_comment ?>"</p>
                                                 </div>
 
@@ -290,7 +290,7 @@ get_header(); ?>
                     <div class="row">
                         <div class="col-12">
 
-                            <div class="text-wrapper">
+                            <div class="text-wrapper skewed">
                                 <h6><?php echo $teamwork_subheading ?></h6>
                                 <h2><?php echo $teamwork_heading ?></h2>
                                 <a class="btn btn-secondary" href="<?php echo get_permalink(get_page_by_title('Our Team')) ?>">Meet The Team</a>
@@ -328,7 +328,7 @@ get_header(); ?>
                                     $our_team_mainText = get_sub_field('our_team_intro_text');
 
                             ?>
-                                    <div class="text">
+                                    <div class="text skewed">
                                         <h5><?php echo $our_team_subheading ?></h5>
                                         <h4>
                                             <?php echo $our_team_mainText ?>
