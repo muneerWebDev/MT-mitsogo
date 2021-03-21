@@ -32,49 +32,50 @@
 
         &::before {
             background: $base-color;
-            transform: rotate(-45deg) translate(-6px,8px)
+            transform: rotate(-45deg) translate(-6px, 8px)
         }
 
         &::after {
             width: 100%;
             background: $base-color;
-            transform: rotate(45deg) translate(-1px,-4px)
+            transform: rotate(45deg) translate(-1px, -4px)
         }
     }
 }
 
-#navTrigger{
-    &:hover{
-        .hamburger{
-            &::after{
+#navTrigger {
+    &:hover {
+        .hamburger {
+            &::after {
                 width: 100%;
             }
         }
     }
 }
 
-.siteHeader{
+.siteHeader {
     padding: 3.5rem 0;
 
-    .social{
-        a{
+    .social {
+        a {
             display: inline-block;
             margin: 0 1rem;
         }
     }
 
-    .search{
+    .search {
         margin: 0 3rem;
-        i{
+
+        i {
             font-size: 2.2rem;
         }
     }
 
-    button{
+    button {
         padding: 0;
     }
 
-    .navbar{
+    .navbar {
         position: fixed;
         top: 0;
         right: 0;
@@ -87,7 +88,7 @@
     }
 }
 
-.navbarOpen{
+.navbarOpen {
 
     // .navbar{
     //     transform: none;
@@ -96,79 +97,85 @@
 }
 
 
-footer{
-    .top-links{
-       text-align: center;
-       position: relative;
-       padding: 4rem 0 0;
+footer {
+    .top-links {
+        text-align: center;
+        position: relative;
+        padding: 4rem 0 0;
         max-width: 100vw;
         overflow: hidden;
-       &::before,
-       &::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           bottom: -20%;
-           background: $grey-light;
-           height: 70%;
-           width: 70%;
-           z-index: -1;
-           transform: rotate(
-            -3deg
-            );
-       }
 
-       &::after{
-        transform: rotate(
-         3deg
-         );
-         left: inherit;
-         right: 0;
-       }
-       *{
-           color: $white;
-       }
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -20%;
+            background: $grey-light;
+            height: 70%;
+            width: 70%;
+            z-index: -1;
+            transform: rotate(-3deg);
+        }
 
-       .btn:not(.btn-link){
-           margin-top: 4rem;
-           border-color: $white;
-           &::after{
-               display: none;
-           }
+        &::after {
+            transform: rotate(3deg);
+            left: inherit;
+            right: 0;
+        }
 
-           &:hover{
-               background: $white;
-           }
-           &.btn-primary:hover{
-               color: $primary;
-           }
-           &.btn-secondary:hover{
-               color: $secondary;
-           }
-       }
+        * {
+            color: $white;
+        }
 
-       .card{
-           padding: 8rem 3rem 7.4rem;
-           border-radius: calc(#{$border-radius}*2);
-           box-shadow: $box-shadow;
-           margin-bottom: 4rem;
-       }
+        .btn:not(.btn-link) {
+            margin-top: 4rem;
+            border-color: $white;
+
+            &::after {
+                display: none;
+            }
+
+            &:hover {
+                background: $white;
+            }
+
+            &.btn-primary:hover {
+                color: $primary;
+            }
+
+            &.btn-secondary:hover {
+                color: $secondary;
+            }
+        }
+
+        .card {
+            padding: 8rem 3rem 7.4rem;
+            border-radius: calc(#{$border-radius}*2);
+            box-shadow: $box-shadow;
+            margin-bottom: 4rem;
+        }
     }
 
-    .bottom-sec{
-        padding: 12.5rem 0 7.5rem;
+    .bottom-sec {
         background: $grey-light;
+        padding: 3.5rem 0 3.5rem;
+
+        @include media-breakpoint-up(md) {
+            padding: 12.5rem 0 7.5rem;
+        }
     }
 
-    .bottom-sec{
-        *{
+    .bottom-sec {
+        * {
             color: $grey;
             transition: .3s;
         }
 
-        .social{
+        .social {
             margin-bottom: 3.5rem;
-            a{
+
+            a {
                 width: 5rem;
                 height: 5rem;
                 display: inline-block;
@@ -177,11 +184,14 @@ footer{
                 border: 2px solid darken($grey-light, 15%);
                 border-radius: 50%;
                 margin: 0 1rem;
-                &:hover{
+
+                &:hover {
                     color: $white;
-                    *{
+
+                    * {
                         color: $white;
                     }
+
                     background: $grey;
                 }
             }
@@ -189,8 +199,8 @@ footer{
     }
 }
 
-.scrolled{
-    .to-top{
+.scrolled {
+    .to-top {
         opacity: 1;
         transform: none;
         pointer-events: all;

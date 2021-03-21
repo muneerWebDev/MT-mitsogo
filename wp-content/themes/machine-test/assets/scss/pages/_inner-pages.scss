@@ -16,7 +16,7 @@
         overflow: hidden;
         box-shadow: $image-box-shadow;
         display: flex;
-
+        align-items: flex-start;
 
         img {
             width: 100%;
@@ -174,7 +174,10 @@
 .our-team{
     max-width: 100vw;
     overflow: hidden;
-    padding: 13rem 0 15rem;
+    padding: 13rem 0 9rem;
+    @include media-breakpoint-up(md){
+        padding: 13rem 0 15rem;
+    }
     .draggable{
         padding: 3rem 8rem 3rem 0;
         margin: 0 -1.75rem;

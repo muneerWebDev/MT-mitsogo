@@ -244,7 +244,7 @@ get_header(); ?>
                         $feature_content = get_sub_field('feature_content');
 
                     ?>
-                        <div class="col-md-4 col-sm-6">
+                        <div class="col-md-4 col-6">
                             <div class="feature">
                                 <div class="icon">
                                     <img src="<?php echo $feature_icon ?>" class="img-fluid" alt="">
