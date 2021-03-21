@@ -17,3 +17,10 @@ add_action('wp_enqueue_scripts', 'theme_assets');
 //custom wordpress registrations
 add_theme_support( 'custom-logo' );
 add_theme_support( 'menus' );
+
+//adding options page
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page();
+	
+}

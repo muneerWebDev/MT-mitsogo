@@ -7,6 +7,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: .3s;
+    margin-top: -5px;
 
     &::before,
     &::after {
@@ -31,15 +32,27 @@
 
         &::before {
             background: $base-color;
-            transform: rotate(-45deg) translate(-9px, 11px)
+            transform: rotate(-45deg) translate(-6px,8px)
         }
 
         &::after {
+            width: 100%;
             background: $base-color;
-            transform: rotate(45deg) translate(-2px, -5px)
+            transform: rotate(45deg) translate(-1px,-4px)
         }
     }
 }
+
+#navTrigger{
+    &:hover{
+        .hamburger{
+            &::after{
+                width: 100%;
+            }
+        }
+    }
+}
+
 .siteHeader{
     padding: 3.5rem 0;
 
@@ -52,7 +65,9 @@
 
     .search{
         margin: 0 3rem;
-        font-size: 1.8rem;
+        i{
+            font-size: 2.2rem;
+        }
     }
 
     button{
@@ -66,5 +81,118 @@
         height: 100vh;
         width: 30%;
         transform: translateX(100%);
+        transition: .3s;
+        background: #fff;
+        z-index: 1;
+    }
+}
+
+.navbarOpen{
+
+    // .navbar{
+    //     transform: none;
+    // }
+
+}
+
+
+footer{
+    .top-links{
+       text-align: center;
+       position: relative;
+       padding: 4rem 0 0;
+        max-width: 100vw;
+        overflow: hidden;
+       &::before,
+       &::after{
+           content: '';
+           position: absolute;
+           left: 0;
+           bottom: -20%;
+           background: $grey-light;
+           height: 70%;
+           width: 70%;
+           z-index: -1;
+           transform: rotate(
+            -3deg
+            );
+       }
+
+       &::after{
+        transform: rotate(
+         3deg
+         );
+         left: inherit;
+         right: 0;
+       }
+       *{
+           color: $white;
+       }
+
+       .btn:not(.btn-link){
+           margin-top: 4rem;
+           border-color: $white;
+           &::after{
+               display: none;
+           }
+
+           &:hover{
+               background: $white;
+           }
+           &.btn-primary:hover{
+               color: $primary;
+           }
+           &.btn-secondary:hover{
+               color: $secondary;
+           }
+       }
+
+       .card{
+           padding: 8rem 3rem 7.4rem;
+           border-radius: calc(#{$border-radius}*2);
+           box-shadow: $box-shadow;
+           margin-bottom: 4rem;
+       }
+    }
+
+    .bottom-sec{
+        padding: 12.5rem 0 7.5rem;
+        background: $grey-light;
+    }
+
+    .bottom-sec{
+        *{
+            color: $grey;
+            transition: .3s;
+        }
+
+        .social{
+            margin-bottom: 3.5rem;
+            a{
+                width: 5rem;
+                height: 5rem;
+                display: inline-block;
+                line-height: 5rem;
+                text-align: center;
+                border: 2px solid darken($grey-light, 15%);
+                border-radius: 50%;
+                margin: 0 1rem;
+                &:hover{
+                    color: $white;
+                    *{
+                        color: $white;
+                    }
+                    background: $grey;
+                }
+            }
+        }
+    }
+}
+
+.scrolled{
+    .to-top{
+        opacity: 1;
+        transform: none;
+        pointer-events: all;
     }
 }

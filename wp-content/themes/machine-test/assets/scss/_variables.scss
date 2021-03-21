@@ -3,11 +3,15 @@ $black: #000;
 $white: #fff;
 $base-color: #353535;
 $grey: #797979;
+$grey-light: #f7f7f7;
 $primary: #344ff4;
 $secondary: #f33a4a;
+$border-color: #e6e6e6;
 
-$image-box-shadow : 0px 16px 18px 7px rgba(39, 41, 35, 0.271);
-$red-box-shadow :1px 2px 13px 3px rgba(243, 58, 74, 0.522);
+$box-shadow: 0px 0px 1.6rem .5rem rgba(39, 41, 35, 0.141);
+$primary-shadow: -.2rem .3rem 2rem .5rem rgba(52, 79, 244, 0.31);
+$secondary-shadow: -.2rem .3rem 2rem .5rem rgba(243, 58, 74, 0.22);
+$image-box-shadow : 0px 1.6rem 1.8rem .7rem rgba(39, 41, 35, 0.271);
 
 //typography
 $font-primary: 'Nunito';
@@ -16,10 +20,14 @@ $base-font-weight : 600;
 
 $h2-size: 4.8rem;
 $h3-size: 4rem;
+$h4-size: 2.7rem;
 $h5-size: 2rem;
 
 $weight-bolder: 800;
+$weight-regular: 400;
 
+$border-radius: 1rem;
+$btn-border-radius: .6rem;
 //layouts
 :root {
     --container-max-width: 126rem;

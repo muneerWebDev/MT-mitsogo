@@ -123,7 +123,7 @@ $breakpoints: (xs: 576px,
 
     &-righted{
         @include container();
-        max-width: auto;
+        max-width: initial !important;
         margin-left: var(--containerOffset);
     }
 }
@@ -143,10 +143,22 @@ $breakpoints: (xs: 576px,
     align-self: center !important;
 }
 
+.text-center{
+    text-align: center;
+}
+
 .dark-sec {
     position: relative;
     z-index: 0;
-    padding: 21rem 0 11rem;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10rem 0;
+    
+    @include media-breakpoint-up(md) {
+        padding: 21rem 0 11rem;
+    }
     &::after {
         content: '';
         position: absolute;
@@ -160,5 +172,9 @@ $breakpoints: (xs: 576px,
     }
     * {
         color: $white;
+    }
+
+    h2 + .btn{
+        margin-top: 6.5rem;
     }
 }

@@ -1,87 +1,219 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     font-family: $font-primary;
-    font-size: $base-font-size ;
-    &:focus{
+    font-size: $base-font-size;
+
+    &:focus {
         outline: none;
     }
 }
-html{
-    font-size: 62.5%;
+
+html {
+    font-size: 52.6%;
+    scroll-behavior: smooth;
+
+    @include media-breakpoint-up(lg){
+        font-size: 62.5%;
+    }
 }
 
-body{
+body {
     color: $base-color;
     font-weight: $base-font-weight;
 }
 
-h2{
+h2 {
     font-size: $h2-size;
 }
 
-h3{
+h3 {
     font-size: $h3-size;
 }
 
-h5{
-    font-size: $h5-size;
+h4 {
+    font-size: $h4-size;
+    font-weight: $weight-regular;
 }
 
-h6{
-    text-transform: uppercase;
-    color: $grey;
-    letter-spacing: .1rem;
-    &+h3,&+h2{
+h5 {
+    font-size: $h5-size;
+
+    &+p,
+    &+h4 {
         margin-top: 1rem;
     }
 }
 
-p{
+h6 {
+    text-transform: uppercase;
+    color: $grey;
+    letter-spacing: .1rem;
+
+    &+h3,
+    &+h2 {
+        margin-top: 1rem;
+    }
+}
+
+p {
     line-height: 3.2rem;
 }
 
-a{
+a {
     color: $black;
     text-decoration: none;
 }
 
-.btn{
-    transition: .3s;
+.secondary-bg {
+    background: $secondary;
 }
 
-.btn-link{
+.primary-bg {
+    background: $primary;
+}
+
+.btn:not(.btn-link) {
+    transition: .3s;
+    display: inline-flex;
+    align-items: center;
+    padding: 1.5rem 3.5rem;
+    border: 2px solid;
+    border-radius: $btn-border-radius;
+    overflow: hidden;
+
+    &::after {
+        content: '\f061';
+        font-family: "Font Awesome 5 Pro";
+        margin-left: 2rem;
+        font-weight: 100;
+        transition: .3s;
+    }
+
+    &:hover {
+        &::after {
+            transform: translateX(5px);
+        }
+    }
+
+    &.btn-primary {
+        background: $primary;
+        color: $white;
+        border-color: $primary;
+
+        &:hover {
+            box-shadow: $primary-shadow;
+        }
+    }
+
+    &.btn-secondary {
+        background: $secondary;
+        color: $white;
+        border-color: $secondary;
+
+        &:hover {
+            box-shadow: $secondary-shadow;
+        }
+    }
+}
+
+.to-top {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 50%;
+    background: $grey;
+    color: $white;
+    position: fixed;
+    right: 3rem;
+    bottom: 3rem;
+    opacity: .8;
+    transition: .3s;
+    opacity: 0;
+    transform: translateX(10px);
+    pointer-events: none;
+    box-shadow: $box-shadow;
+
+    &::after {
+        font-family: "Font Awesome 5 Pro";
+        content: '\f106';
+        font-weight: 300;
+    }
+}
+
+
+.btn-link {
     display: inline-flex;
     align-items: center;
     color: $secondary;
     font-size: $h5-size;
     font-weight: $weight-bolder;
+    position: relative;
 
-    &::after{
+    &::after {
         content: '';
         width: 2.3rem;
         height: 2.3rem;
         background: $secondary;
         border-radius: 50%;
         line-height: 2.3rem;
-        font-family: "Font Awesome 5 Pro";
         text-align: center;
-        font-style: normal;
+        font-family: "Font Awesome 5 Pro";
         content: '\f054';
         color: $white;
         font-size: calc(#{$base-font-size}/2);
         margin-left: 1.3rem;
-        box-shadow: $red-box-shadow;
+        box-shadow: $secondary-shadow;
         transition: .3s;
     }
-    &:hover{
-        &::after{
+
+    &::before {
+        // content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        height: 3px;
+        transition: .3s;
+        background: $secondary;
+        right: 100%;
+        opacity: .6;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    &:hover {
+        &::after {
             transform: translateX(5px);
+        }
+
+        &::before {
+            right: 3.6rem;
         }
     }
 }
 
-button{
+
+button {
     background: transparent;
     border: none;
+    cursor: pointer;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: $border-color;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lighten($base-color, 10%);
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: $base-color;
 }

@@ -33,12 +33,31 @@
                     </div>
 
                     <div class="right-content ml-auto d-flex align-self-center">
-                        
-                        <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-google"></i></a>
-                        </div>
+
+
+
+                        <?php
+
+                        if (have_rows('top_panel_social_icons', 'option')) :
+
+                            while (have_rows('top_panel_social_icons', 'option')) : the_row();
+
+                                $twitter_url = get_sub_field('twitter_url');
+                                $facebook_url = get_sub_field('facebook_url');
+                                $google_url = get_sub_field('google_url');
+                        ?>
+                                <div class="social">
+
+                                    <a href="<?php echo $twitter_url ?>" target="_blank"><i class="fab fa-twitter"></i></a>
+                                    <a href="<?php echo $facebook_url ?>" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="<?php echo $google_url ?>" target="_blank"><i class="fab fa-google"></i></a>
+
+                                </div>
+                        <?php
+                            endwhile;
+                        endif;
+
+                        ?>
 
                         <button class="btn-trans search">
                             <i class="far fa-search"></i>
