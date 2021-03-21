@@ -67,7 +67,12 @@
         }
 
         .btn {
-            margin-top: 6rem;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+            @include media-breakpoint-up(md) {
+                margin-top: 6rem;
+                margin-bottom: 0;
+            }
         }
     }
 
